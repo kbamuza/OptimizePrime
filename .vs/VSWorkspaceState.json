@@ -1,6 +1,17 @@
 {
   "ExpandedNodes": [
-    ""
+    "\\Resources\\src",
+    "\\Resources\\src\\app",
+    "\\Resources\\src\\app\\components",
+    "\\Resources\\src\\app\\components\\navbar",
+    "\\Resources\\src\\app\\layouts",
+    "\\Resources\\src\\app\\layouts\\admin-layout",
+    "\\Resources\\src\\assets",
+    "\\Resources\\src\\assets\\scss",
+    "\\Resources\\src\\assets\\scss\\core",
+    "\\Resources\\src\\assets\\scss\\core\\variables",
+    "\\Resources\\typings\\modules",
+    "\\Resources\\typings\\modules\\chartist"
   ],
   "PreviewInSolutionExplorer": false
 }
