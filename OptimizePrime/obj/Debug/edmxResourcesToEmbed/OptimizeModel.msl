@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InvestecGradDBModelStoreContainer" CdmEntityContainer="InvestecGradDBEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="InvestecGradDBModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applicants">
+      <EntityTypeMapping TypeName="InvestecGradDBModel.Applicant">
+        <MappingFragment StoreEntitySet="Applicant">
+          <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="PhysicalAddress" ColumnName="PhysicalAddress" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Citizenship" ColumnName="Citizenship" />
+          <ScalarProperty Name="ResidentialAddress" ColumnName="ResidentialAddress" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Race" ColumnName="Race" />
+          <ScalarProperty Name="Disability" ColumnName="Disability" />
+          <ScalarProperty Name="LinkedInLink" ColumnName="LinkedInLink" />
+          <ScalarProperty Name="ApplicantIntroduction" ColumnName="ApplicantIntroduction" />
+          <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicantExperiences">
+      <EntityTypeMapping TypeName="InvestecGradDBModel.ApplicantExperience">
+        <MappingFragment StoreEntitySet="ApplicantExperience">
+          <ScalarProperty Name="ApplicantExperienceID" ColumnName="ApplicantExperienceID" />
+          <ScalarProperty Name="HighestQualification" ColumnName="HighestQualification" />
+          <ScalarProperty Name="YearsOfExperience" ColumnName="YearsOfExperience" />
+          <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicantStudies">
+      <EntityTypeMapping TypeName="InvestecGradDBModel.ApplicantStudy">
+        <MappingFragment StoreEntitySet="ApplicantStudies">
+          <ScalarProperty Name="ApplicantStudiesID" ColumnName="ApplicantStudiesID" />
+          <ScalarProperty Name="StudiesDescription" ColumnName="StudiesDescription" />
+          <ScalarProperty Name="StudiesLocation" ColumnName="StudiesLocation" />
+          <ScalarProperty Name="StudiesDuration" ColumnName="StudiesDuration" />
+          <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="InvestecGradDBModel.Application">
+        <MappingFragment StoreEntitySet="Application">
+          <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+          <ScalarProperty Name="ApplicationDate" ColumnName="ApplicationDate" />
+          <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssessmentResults">
+      <EntityTypeMapping TypeName="InvestecGradDBModel.AssessmentResult">
+        <MappingFragment StoreEntitySet="AssessmentResult">
+          <ScalarProperty Name="AssessmentID" ColumnName="AssessmentID" />
+          <ScalarProperty Name="PersonalityTestResult" ColumnName="PersonalityTestResult" />
+          <ScalarProperty Name="CognitiveTestResult" ColumnName="CognitiveTestResult" />
+          <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="InvestecGradDBModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="StatusDescription" ColumnName="StatusDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="InvestecGradDBModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="database_firewall_rules">
+      <EntityTypeMapping TypeName="InvestecGradDBModel.database_firewall_rules">
+        <MappingFragment StoreEntitySet="database_firewall_rules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+          <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
