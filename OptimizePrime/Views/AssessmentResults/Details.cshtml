@@ -1,0 +1,42 @@
+﻿@model OptimizePrime.AssessmentResult
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AssessmentResult</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonalityTestResult)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonalityTestResult)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CognitiveTestResult)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CognitiveTestResult)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Applicant.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AssessmentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
