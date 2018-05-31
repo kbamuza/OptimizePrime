@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InvestecGradDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="text" Nullable="false" />
+    <Property Name="Surname" Type="text" Nullable="false" />
+    <Property Name="JobTitle" Type="text" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Applicant">
+    <Key>
+      <PropertyRef Name="ApplicantID" />
+    </Key>
+    <Property Name="ApplicantID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="text" Nullable="false" />
+    <Property Name="Surname" Type="text" Nullable="false" />
+    <Property Name="EmailAddress" Type="text" Nullable="false" />
+    <Property Name="ContactNumber" Type="int" Nullable="false" />
+    <Property Name="PhysicalAddress" Type="text" Nullable="false" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Nationality" Type="text" Nullable="false" />
+    <Property Name="Citizenship" Type="text" Nullable="false" />
+    <Property Name="ResidentialAddress" Type="text" Nullable="false" />
+    <Property Name="Gender" Type="text" Nullable="false" />
+    <Property Name="Race" Type="text" Nullable="false" />
+    <Property Name="Disability" Type="text" Nullable="false" />
+    <Property Name="LinkedInLink" Type="text" Nullable="false" />
+    <Property Name="ApplicantIntroduction" Type="text" Nullable="false" />
+    <Property Name="IDNumber" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ApplicantExperience">
+    <Key>
+      <PropertyRef Name="ApplicantExperienceID" />
+    </Key>
+    <Property Name="ApplicantExperienceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HighestQualification" Type="text" Nullable="false" />
+    <Property Name="YearsOfExperience" Type="int" Nullable="false" />
+    <Property Name="ApplicantID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ApplicantStudies">
+    <Key>
+      <PropertyRef Name="ApplicantStudiesID" />
+    </Key>
+    <Property Name="ApplicantStudiesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudiesDescription" Type="text" Nullable="false" />
+    <Property Name="StudiesLocation" Type="text" Nullable="false" />
+    <Property Name="StudiesDuration" Type="text" Nullable="false" />
+    <Property Name="ApplicantID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Application">
+    <Key>
+      <PropertyRef Name="ApplicationID" />
+    </Key>
+    <Property Name="ApplicationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationDate" Type="date" Nullable="false" />
+    <Property Name="ApplicantID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AssessmentResult">
+    <Key>
+      <PropertyRef Name="AssessmentID" />
+    </Key>
+    <Property Name="AssessmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonalityTestResult" Type="text" Nullable="false" />
+    <Property Name="CognitiveTestResult" Type="text" Nullable="false" />
+    <Property Name="ApplicantID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusDescription" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="text" Nullable="false" />
+    <Property Name="Password" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'InvestecGradDB.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="modify_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_115">
+    <End Role="Applicant" Type="Self.Applicant" Multiplicity="1" />
+    <End Role="ApplicantExperience" Type="Self.ApplicantExperience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant">
+        <PropertyRef Name="ApplicantID" />
+      </Principal>
+      <Dependent Role="ApplicantExperience">
+        <PropertyRef Name="ApplicantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_131">
+    <End Role="Applicant" Type="Self.Applicant" Multiplicity="1" />
+    <End Role="ApplicantStudies" Type="Self.ApplicantStudies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant">
+        <PropertyRef Name="ApplicantID" />
+      </Principal>
+      <Dependent Role="ApplicantStudies">
+        <PropertyRef Name="ApplicantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_30">
+    <End Role="Applicant" Type="Self.Applicant" Multiplicity="1" />
+    <End Role="AssessmentResult" Type="Self.AssessmentResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant">
+        <PropertyRef Name="ApplicantID" />
+      </Principal>
+      <Dependent Role="AssessmentResult">
+        <PropertyRef Name="ApplicantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_49">
+    <End Role="Applicant" Type="Self.Applicant" Multiplicity="1" />
+    <End Role="Application" Type="Self.Application" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant">
+        <PropertyRef Name="ApplicantID" />
+      </Principal>
+      <Dependent Role="Application">
+        <PropertyRef Name="ApplicantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_58">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Applicant" Type="Self.Applicant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Applicant">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_76">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Applicant" Type="Self.Applicant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Applicant">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_87">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Admin" Type="Self.Admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Admin">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InvestecGradDBModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Applicant" EntityType="Self.Applicant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplicantExperience" EntityType="Self.ApplicantExperience" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplicantStudies" EntityType="Self.ApplicantStudies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Application" EntityType="Self.Application" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentResult" EntityType="Self.AssessmentResult" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+      <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_115" Association="Self.FK_115">
+      <End Role="Applicant" EntitySet="Applicant" />
+      <End Role="ApplicantExperience" EntitySet="ApplicantExperience" />
+    </AssociationSet>
+    <AssociationSet Name="FK_131" Association="Self.FK_131">
+      <End Role="Applicant" EntitySet="Applicant" />
+      <End Role="ApplicantStudies" EntitySet="ApplicantStudies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_30" Association="Self.FK_30">
+      <End Role="Applicant" EntitySet="Applicant" />
+      <End Role="AssessmentResult" EntitySet="AssessmentResult" />
+    </AssociationSet>
+    <AssociationSet Name="FK_49" Association="Self.FK_49">
+      <End Role="Applicant" EntitySet="Applicant" />
+      <End Role="Application" EntitySet="Application" />
+    </AssociationSet>
+    <AssociationSet Name="FK_58" Association="Self.FK_58">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Applicant" EntitySet="Applicant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_76" Association="Self.FK_76">
+      <End Role="User" EntitySet="User" />
+      <End Role="Applicant" EntitySet="Applicant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_87" Association="Self.FK_87">
+      <End Role="User" EntitySet="User" />
+      <End Role="Admin" EntitySet="Admin" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

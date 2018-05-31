@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="AdminID" />
     </Key>
-    <Property Name="AdminID" Type="Int32" Nullable="false" />
+    <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="JobTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
@@ -15,7 +15,7 @@
     <Key>
       <PropertyRef Name="ApplicantID" />
     </Key>
-    <Property Name="ApplicantID" Type="Int32" Nullable="false" />
+    <Property Name="ApplicantID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="EmailAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
@@ -44,7 +44,7 @@
     <Key>
       <PropertyRef Name="ApplicantExperienceID" />
     </Key>
-    <Property Name="ApplicantExperienceID" Type="Int32" Nullable="false" />
+    <Property Name="ApplicantExperienceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="HighestQualification" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="YearsOfExperience" Type="Int32" Nullable="false" />
     <Property Name="ApplicantID" Type="Int32" Nullable="false" />
@@ -54,7 +54,7 @@
     <Key>
       <PropertyRef Name="ApplicantStudiesID" />
     </Key>
-    <Property Name="ApplicantStudiesID" Type="Int32" Nullable="false" />
+    <Property Name="ApplicantStudiesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="StudiesDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="StudiesLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="StudiesDuration" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
@@ -65,7 +65,7 @@
     <Key>
       <PropertyRef Name="ApplicationID" />
     </Key>
-    <Property Name="ApplicationID" Type="Int32" Nullable="false" />
+    <Property Name="ApplicationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ApplicationDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="ApplicantID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Applicant" Relationship="Self.FK_49" FromRole="Application" ToRole="Applicant" />
@@ -74,7 +74,7 @@
     <Key>
       <PropertyRef Name="AssessmentID" />
     </Key>
-    <Property Name="AssessmentID" Type="Int32" Nullable="false" />
+    <Property Name="AssessmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PersonalityTestResult" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="CognitiveTestResult" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="ApplicantID" Type="Int32" Nullable="false" />
@@ -84,7 +84,7 @@
     <Key>
       <PropertyRef Name="StatusID" />
     </Key>
-    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="StatusDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Applicants" Relationship="Self.FK_58" FromRole="Status" ToRole="Applicant" />
   </EntityType>
@@ -92,7 +92,7 @@
     <Key>
       <PropertyRef Name="UserID" />
     </Key>
-    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Admins" Relationship="Self.FK_87" FromRole="User" ToRole="Admin" />
@@ -198,7 +198,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="InvestecGradDBEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="InvestecGradDBEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Admins" EntityType="Self.Admin" />
     <EntitySet Name="Applicants" EntityType="Self.Applicant" />
     <EntitySet Name="ApplicantExperiences" EntityType="Self.ApplicantExperience" />
