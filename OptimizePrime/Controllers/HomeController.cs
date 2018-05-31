@@ -10,10 +10,10 @@ namespace OptimizePrime.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View("~/HomePage.aspx");
         }
 
-        public ActionResult About()
+     /*   public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
@@ -25,6 +25,6 @@ namespace OptimizePrime.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
-        }
+        }*/
     }
 }

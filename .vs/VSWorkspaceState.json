@@ -1,17 +1,19 @@
 {
   "ExpandedNodes": [
-    "\\Resources\\src",
-    "\\Resources\\src\\app",
-    "\\Resources\\src\\app\\components",
-    "\\Resources\\src\\app\\components\\navbar",
-    "\\Resources\\src\\app\\layouts",
-    "\\Resources\\src\\app\\layouts\\admin-layout",
-    "\\Resources\\src\\assets",
-    "\\Resources\\src\\assets\\scss",
-    "\\Resources\\src\\assets\\scss\\core",
-    "\\Resources\\src\\assets\\scss\\core\\variables",
-    "\\Resources\\typings\\modules",
-    "\\Resources\\typings\\modules\\chartist"
+    "",
+    "\\Additional Components",
+    "\\Additional Components\\material-kit-html-v2.0.3",
+    "\\Additional Components\\material-kit-html-v2.0.3\\material-kit-html-v2.0.3",
+    "\\Additional Components\\material-kit-html-v2.0.3\\material-kit-html-v2.0.3\\node_modules",
+    "\\Additional Components\\material-kit-html-v2.0.3\\material-kit-html-v2.0.3\\node_modules\\global-prefix",
+    "\\Additional Components\\material-kit-html-v2.0.3\\material-kit-html-v2.0.3\\node_modules\\homedir-polyfill",
+    "\\Additional Components\\material-kit-html-v2.0.3\\material-kit-html-v2.0.3\\node_modules\\normalize-package-data",
+    "\\Additional Components\\material-kit-html-v2.0.3\\material-kit-html-v2.0.3\\node_modules\\normalize-package-data\\lib",
+    "\\Additional Components\\material-kit-html-v2.0.3\\material-kit-html-v2.0.3\\node_modules\\os-homedir",
+    "\\Additional Components\\material-kit-html-v2.0.3\\material-kit-html-v2.0.3\\node_modules\\osenv",
+    "\\Additional Components\\material-kit-html-v2.0.3\\material-kit-html-v2.0.3\\node_modules\\tildify",
+    "\\OptimizePrime\\App_Start",
+    "\\OptimizePrime\\Models"
   ],
   "PreviewInSolutionExplorer": false
 }
